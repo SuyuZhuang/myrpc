@@ -44,6 +44,7 @@ public class RPCProvider<T> {
         public void run() {
             try {
                 String line = new BufferedReader(new InputStreamReader(socket.getInputStream())).readLine();
+                System.out.println("RPCProvider 线程开启: " + line);
                 MethodInfo methodInfo = JSON.parseObject(line, MethodInfo.class);
                 // 知道客户端想要我们调用什么方法了
                 Method method = serviceImpl.getClass().getMethod(methodInfo.getMethodName(),

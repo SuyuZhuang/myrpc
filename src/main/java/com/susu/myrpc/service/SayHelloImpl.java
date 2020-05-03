@@ -8,7 +8,7 @@ import com.susu.myrpc.api.ISayHello;
  */
 public class SayHelloImpl implements ISayHello {
     @Override
-    public String sayHello() {
-        return "Hello My RPC";
+    public String sayHello(String msg) {
+        return "Hello My " + msg;
     }
 }

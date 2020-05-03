@@ -5,5 +5,5 @@ package com.susu.myrpc.api;
  * @date 2020/5/3 7:44 下午
  */
 public interface ISayHello {
-    String sayHello();
+    String sayHello(String msg);
 }

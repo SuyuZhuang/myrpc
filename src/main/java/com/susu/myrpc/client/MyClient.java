@@ -12,6 +12,6 @@ import java.io.IOException;
 public class MyClient {
     public static void main(String[] args) throws IOException {
         ISayHello service = new RPCClient<>(ISayHello.class).getRef();
-        service.sayHello();
+        System.out.println(service.sayHello("RPC"));
     }
 }
