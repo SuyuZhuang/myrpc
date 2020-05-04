@@ -42,8 +42,8 @@ public class RPCProvider<T> {
 
         @Override
         public void run() {
-            try {
-                String line = new BufferedReader(new InputStreamReader(socket.getInputStream())).readLine();
+            try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+                String line = bufferedReader.readLine();
                 System.out.println("RPCProvider 线程开启: " + line);
                 MethodInfo methodInfo = JSON.parseObject(line, MethodInfo.class);
                 // 知道客户端想要我们调用什么方法了

@@ -40,7 +40,6 @@ public class RPCClient<T> {
 
                     // 拿到结果
                     String retrunedValue = new BufferedReader(new InputStreamReader(RPCClient.this.socket.getInputStream())).readLine();
-
                     return JSON.parse(retrunedValue);
                 });
     }
